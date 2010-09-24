@@ -60,3 +60,11 @@ test('DateUtils.next_monday', function() {
   sameDates(DateUtils.next_monday(d(2010,9,1)), d(2010, 9, 6));
 });
 
+test('DateUtils.beginning_of_week', function() {
+  sameDates(DateUtils.beginning_of_week(d(2010,9,22)), d(2010, 9, 20));
+  sameDates(DateUtils.beginning_of_week(d(2010,9,21)), d(2010, 9, 20));
+  sameDates(DateUtils.beginning_of_week(d(2010,10,1)), d(2010, 9, 27));
+  sameDates(DateUtils.beginning_of_week(d(2010,10,2)), d(2010, 9, 27));
+  sameDates(DateUtils.beginning_of_week(d(2010,10,4)), d(2010, 10, 4));
+  sameDates(DateUtils.beginning_of_week(d(2010,9,1)), d(2010, 8, 30));
+});
